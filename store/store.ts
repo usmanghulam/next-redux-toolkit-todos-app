@@ -2,6 +2,7 @@ import { configureStore, combineReducers, AnyAction } from "@reduxjs/toolkit";
 import { HYDRATE, createWrapper } from "next-redux-wrapper";
 
 import { counter } from "./counter/reducer";
+import todoreducer from "./todos/reducer";
 
 const reducer = (
   state: ReturnType<typeof combineReducers>,
@@ -16,6 +17,7 @@ const reducer = (
   }
   return combineReducers({
     counter,
+    todos: todoreducer,
   })(state, action);
 };
 
